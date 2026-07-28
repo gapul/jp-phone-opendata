@@ -1,0 +1,10 @@
+name = "jp-phone-opendata"
+main = "src/index.ts"
+compatibility_date = "2026-07-01"
+
+# Create the DB once with:  wrangler d1 create jp-phone
+# then paste the returned database_id below.
+[[d1_databases]]
+binding = "DB"
+database_name = "jp-phone"
+database_id = "REPLACE_WITH_D1_DATABASE_ID"

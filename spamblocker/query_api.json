@@ -1,0 +1,43 @@
+{
+  "type": "QueryApi",
+  "id": 1,
+  "desc": "JP OpenData (Soumu carrier lookup)",
+  "actions": [
+    {
+      "type": "ParseIncomingNumber",
+      "numberFilter": ".*",
+      "forwardType": 0
+    },
+    {
+      "type": "HttpDownload",
+      "method": 0,
+      "url": "https://jp-phone-opendata.YOUR-SUBDOMAIN.workers.dev/lookup?number={number}",
+      "header": "",
+      "body": "",
+      "enableRetry": false,
+      "retryTimes": 0,
+      "retryDelayMs": 0
+    },
+    {
+      "type": "ParseQueryResult",
+      "strategy": "DirectVerdict",
+      "negativeSig": "\"verdict\":\"spam\"",
+      "negativeFlags": 0,
+      "positiveSig": "\"verdict\":\"legit\"",
+      "positiveFlags": 0,
+      "categorySig": "\"carrier\":\"(.+?)\"",
+      "categoryFlags": 0,
+      "commentSig": "\"label\":\"(.+?)\"",
+      "commentFlags": 0,
+      "categoryMapping": ""
+    },
+    {
+      "type": "FilterSpamResult"
+    },
+    {
+      "type": "ImportToSpamDB",
+      "importReason": "Manually"
+    }
+  ],
+  "enabled": true
+}

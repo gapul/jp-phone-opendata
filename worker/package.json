@@ -1,0 +1,15 @@
+{
+  "name": "jp-phone-opendata-worker",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "db:schema": "wrangler d1 execute jp-phone --remote --file=schema.sql",
+    "db:import": "wrangler d1 execute jp-phone --remote --file=../data/import.sql"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20260701.0",
+    "wrangler": "^3.90.0"
+  }
+}
