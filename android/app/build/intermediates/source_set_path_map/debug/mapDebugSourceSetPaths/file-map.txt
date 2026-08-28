@@ -1,7 +1,0 @@
-net.gapul.jpphonedirectory.app-pngs-0 /Users/gapul/Developer/github.com/gapul/jp-phone-opendata/android/app/build/generated/res/pngs/debug
-net.gapul.jpphonedirectory.app-resValues-1 /Users/gapul/Developer/github.com/gapul/jp-phone-opendata/android/app/build/generated/res/resValues/debug
-net.gapul.jpphonedirectory.app-packageDebugResources-2 /Users/gapul/Developer/github.com/gapul/jp-phone-opendata/android/app/build/intermediates/incremental/debug/packageDebugResources/merged.dir
-net.gapul.jpphonedirectory.app-packageDebugResources-3 /Users/gapul/Developer/github.com/gapul/jp-phone-opendata/android/app/build/intermediates/incremental/debug/packageDebugResources/stripped.dir
-net.gapul.jpphonedirectory.app-debug-4 /Users/gapul/Developer/github.com/gapul/jp-phone-opendata/android/app/build/intermediates/merged_res/debug/mergeDebugResources
-net.gapul.jpphonedirectory.app-debug-5 /Users/gapul/Developer/github.com/gapul/jp-phone-opendata/android/app/src/debug/res
-net.gapul.jpphonedirectory.app-main-6 /Users/gapul/Developer/github.com/gapul/jp-phone-opendata/android/app/src/main/res
