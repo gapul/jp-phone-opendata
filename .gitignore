@@ -16,3 +16,8 @@ ios/CallDirectory/Resources/*.bin
 
 # Generated from ios/project.yml by xcodegen.
 ios/JPPhoneDirectory.xcodeproj/
+
+# iOS build artifacts
+ios/build/
+ios/dist-ipa/
+ios/*.xcodeproj/
