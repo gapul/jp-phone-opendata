@@ -21,3 +21,10 @@ ios/JPPhoneDirectory.xcodeproj/
 ios/build/
 ios/dist-ipa/
 ios/*.xcodeproj/
+
+# Gradle's caches and build output.
+android/.gradle/
+android/.kotlin/
+android/build/
+android/app/build/
+android/local.properties
