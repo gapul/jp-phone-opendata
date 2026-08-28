@@ -1,0 +1,47 @@
+{
+  "": {
+    "swift-dependencies": "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKit.build/primary.swiftdeps"
+  },
+  "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/Sources/PhoneDirectoryKit/DirectoryCatalog.swift": {
+    "dependencies": "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKit.build/DirectoryCatalog.d",
+    "object": "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKit.build/DirectoryCatalog.swift.o",
+    "swiftmodule": "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKit.build/DirectoryCatalog~partial.swiftmodule",
+    "swift-dependencies": "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKit.build/DirectoryCatalog.swiftdeps",
+    "diagnostics": "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKit.build/DirectoryCatalog.dia"
+  },
+  "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/Sources/PhoneDirectoryKit/DirectoryMerge.swift": {
+    "dependencies": "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKit.build/DirectoryMerge.d",
+    "object": "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKit.build/DirectoryMerge.swift.o",
+    "swiftmodule": "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKit.build/DirectoryMerge~partial.swiftmodule",
+    "swift-dependencies": "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKit.build/DirectoryMerge.swiftdeps",
+    "diagnostics": "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKit.build/DirectoryMerge.dia"
+  },
+  "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/Sources/PhoneDirectoryKit/ListInstaller.swift": {
+    "dependencies": "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKit.build/ListInstaller.d",
+    "object": "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKit.build/ListInstaller.swift.o",
+    "swiftmodule": "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKit.build/ListInstaller~partial.swiftmodule",
+    "swift-dependencies": "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKit.build/ListInstaller.swiftdeps",
+    "diagnostics": "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKit.build/ListInstaller.dia"
+  },
+  "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/Sources/PhoneDirectoryKit/ListPatch.swift": {
+    "dependencies": "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKit.build/ListPatch.d",
+    "object": "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKit.build/ListPatch.swift.o",
+    "swiftmodule": "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKit.build/ListPatch~partial.swiftmodule",
+    "swift-dependencies": "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKit.build/ListPatch.swiftdeps",
+    "diagnostics": "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKit.build/ListPatch.dia"
+  },
+  "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/Sources/PhoneDirectoryKit/PhoneList.swift": {
+    "dependencies": "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKit.build/PhoneList.d",
+    "object": "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKit.build/PhoneList.swift.o",
+    "swiftmodule": "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKit.build/PhoneList~partial.swiftmodule",
+    "swift-dependencies": "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKit.build/PhoneList.swiftdeps",
+    "diagnostics": "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKit.build/PhoneList.dia"
+  },
+  "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/Sources/PhoneDirectoryKit/PhoneListPacker.swift": {
+    "dependencies": "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKit.build/PhoneListPacker.d",
+    "object": "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKit.build/PhoneListPacker.swift.o",
+    "swiftmodule": "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKit.build/PhoneListPacker~partial.swiftmodule",
+    "swift-dependencies": "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKit.build/PhoneListPacker.swiftdeps",
+    "diagnostics": "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKit.build/PhoneListPacker.dia"
+  }
+}

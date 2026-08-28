@@ -1,0 +1,69 @@
+name: JPPhoneDirectory
+
+options:
+  bundleIdPrefix: net.gapul
+  deploymentTarget:
+    iOS: "17.0"
+
+settings:
+  base:
+    MARKETING_VERSION: "0.3.0"
+    CURRENT_PROJECT_VERSION: "1"
+    SWIFT_VERSION: "5.9"
+    CODE_SIGN_STYLE: Automatic
+
+packages:
+  # The list engine lives outside both targets so it can be unit tested with
+  # `swift test` on the host, away from CallKit and the device.
+  PhoneDirectoryKit:
+    path: PhoneDirectoryKit
+
+targets:
+  JPPhoneDirectory:
+    type: application
+    platform: iOS
+    sources:
+      - App
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: net.gapul.JPPhoneDirectory
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_CFBundleDisplayName: JP Phone Directory
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_UISupportedInterfaceOrientations: UIInterfaceOrientationPortrait
+        TARGETED_DEVICE_FAMILY: "1,2"
+    entitlements:
+      path: App/JPPhoneDirectory.entitlements
+      properties:
+        com.apple.security.application-groups:
+          - group.net.gapul.JPPhoneDirectory
+    dependencies:
+      - package: PhoneDirectoryKit
+      - target: CallDirectory
+        embed: true
+
+  CallDirectory:
+    type: app-extension
+    platform: iOS
+    sources:
+      - CallDirectory
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: net.gapul.JPPhoneDirectory.CallDirectory
+    entitlements:
+      path: CallDirectory/CallDirectory.entitlements
+      properties:
+        com.apple.security.application-groups:
+          - group.net.gapul.JPPhoneDirectory
+    dependencies:
+      - package: PhoneDirectoryKit
+    info:
+      path: CallDirectory/Info.plist
+      properties:
+        CFBundleDisplayName: JP Phone Directory
+        # Must track the container app or embedding validation warns.
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.identitylookup.call-directory
+          NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).CallDirectoryHandler

@@ -1,0 +1,716 @@
+{
+  "builtTestProducts" : [
+    {
+      "binaryPath" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKitPackageTests.xctest/Contents/MacOS/PhoneDirectoryKitPackageTests",
+      "packagePath" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit",
+      "productName" : "PhoneDirectoryKitPackageTests"
+    }
+  ],
+  "copyCommands" : {
+
+  },
+  "explicitTargetDependencyImportCheckingMode" : {
+    "none" : {
+
+    }
+  },
+  "generatedSourceTargetSet" : [
+
+  ],
+  "pluginDescriptions" : [
+
+  ],
+  "swiftCommands" : {
+    "C.PhoneDirectoryKit-arm64-apple-macosx-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKit.build/sources",
+      "importPath" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/Sources/PhoneDirectoryKit/DirectoryCatalog.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/Sources/PhoneDirectoryKit/DirectoryMerge.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/Sources/PhoneDirectoryKit/ListInstaller.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/Sources/PhoneDirectoryKit/ListPatch.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/Sources/PhoneDirectoryKit/PhoneList.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/Sources/PhoneDirectoryKit/PhoneListPacker.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKit.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "PhoneDirectoryKit",
+      "moduleOutputPath" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/Modules/PhoneDirectoryKit.swiftmodule",
+      "objects" : [
+        "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKit.build/DirectoryCatalog.swift.o",
+        "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKit.build/DirectoryMerge.swift.o",
+        "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKit.build/ListInstaller.swift.o",
+        "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKit.build/ListPatch.swift.o",
+        "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKit.build/PhoneList.swift.o",
+        "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKit.build/PhoneListPacker.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx14.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j8",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKit.build/include/PhoneDirectoryKit-Swift.h",
+        "-swift-version",
+        "5",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "phonedirectorykit"
+      ],
+      "outputFileMapPath" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKit.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKit.build/DirectoryCatalog.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKit.build/DirectoryMerge.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKit.build/ListInstaller.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKit.build/ListPatch.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKit.build/PhoneList.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKit.build/PhoneListPacker.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/Modules/PhoneDirectoryKit.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/Sources/PhoneDirectoryKit/DirectoryCatalog.swift",
+        "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/Sources/PhoneDirectoryKit/DirectoryMerge.swift",
+        "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/Sources/PhoneDirectoryKit/ListInstaller.swift",
+        "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/Sources/PhoneDirectoryKit/ListPatch.swift",
+        "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/Sources/PhoneDirectoryKit/PhoneList.swift",
+        "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/Sources/PhoneDirectoryKit/PhoneListPacker.swift"
+      ],
+      "tempsPath" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKit.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.PhoneDirectoryKitPackageTests-arm64-apple-macosx-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKitPackageTests.build/sources",
+      "importPath" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKitPackageTests.derived/runner.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/Modules/PhoneDirectoryKitTests.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKitPackageTests.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "PhoneDirectoryKitPackageTests",
+      "moduleOutputPath" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/Modules/PhoneDirectoryKitPackageTests.swiftmodule",
+      "objects" : [
+        "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKitPackageTests.build/runner.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx14.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-Xfrontend",
+        "-enable-cross-import-overlays",
+        "-j8",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKitPackageTests.build/include/PhoneDirectoryKitPackageTests-Swift.h",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "phonedirectorykit"
+      ],
+      "outputFileMapPath" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKitPackageTests.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKitPackageTests.build/runner.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/Modules/PhoneDirectoryKitPackageTests.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKitPackageTests.derived/runner.swift"
+      ],
+      "tempsPath" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKitPackageTests.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.PhoneDirectoryKitTests-arm64-apple-macosx-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKitTests.build/sources",
+      "importPath" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/Tests/PhoneDirectoryKitTests/DirectoryMergeTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/Tests/PhoneDirectoryKitTests/ListPatchTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/Modules/PhoneDirectoryKit.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKitTests.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "PhoneDirectoryKitTests",
+      "moduleOutputPath" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/Modules/PhoneDirectoryKitTests.swiftmodule",
+      "objects" : [
+        "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKitTests.build/DirectoryMergeTests.swift.o",
+        "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKitTests.build/ListPatchTests.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx14.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-Xfrontend",
+        "-enable-cross-import-overlays",
+        "-j8",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-swift-version",
+        "5",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "phonedirectorykit"
+      ],
+      "outputFileMapPath" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKitTests.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKitTests.build/DirectoryMergeTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKitTests.build/ListPatchTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/Modules/PhoneDirectoryKitTests.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/Tests/PhoneDirectoryKitTests/DirectoryMergeTests.swift",
+        "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/Tests/PhoneDirectoryKitTests/ListPatchTests.swift"
+      ],
+      "tempsPath" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKitTests.build",
+      "wholeModuleOptimization" : false
+    }
+  },
+  "swiftFrontendCommands" : {
+
+  },
+  "swiftTargetScanArgs" : {
+    "PhoneDirectoryKit" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "PhoneDirectoryKit",
+      "-package-name",
+      "phonedirectorykit",
+      "-c",
+      "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/Sources/PhoneDirectoryKit/DirectoryCatalog.swift",
+      "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/Sources/PhoneDirectoryKit/DirectoryMerge.swift",
+      "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/Sources/PhoneDirectoryKit/ListInstaller.swift",
+      "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/Sources/PhoneDirectoryKit/ListPatch.swift",
+      "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/Sources/PhoneDirectoryKit/PhoneList.swift",
+      "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/Sources/PhoneDirectoryKit/PhoneListPacker.swift",
+      "-I",
+      "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx14.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j8",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKit.build/include/PhoneDirectoryKit-Swift.h",
+      "-swift-version",
+      "5",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "phonedirectorykit",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "PhoneDirectoryKitPackageTests" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "PhoneDirectoryKitPackageTests",
+      "-package-name",
+      "phonedirectorykit",
+      "-c",
+      "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKitPackageTests.derived/runner.swift",
+      "-I",
+      "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx14.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-Xfrontend",
+      "-enable-cross-import-overlays",
+      "-j8",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKitPackageTests.build/include/PhoneDirectoryKitPackageTests-Swift.h",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "phonedirectorykit",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "PhoneDirectoryKitTests" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "PhoneDirectoryKitTests",
+      "-package-name",
+      "phonedirectorykit",
+      "-c",
+      "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/Tests/PhoneDirectoryKitTests/DirectoryMergeTests.swift",
+      "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/Tests/PhoneDirectoryKitTests/ListPatchTests.swift",
+      "-I",
+      "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx14.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-Xfrontend",
+      "-enable-cross-import-overlays",
+      "-j8",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-swift-version",
+      "5",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "phonedirectorykit",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ]
+  },
+  "targetDependencyMap" : {
+    "PhoneDirectoryKit" : [
+
+    ],
+    "PhoneDirectoryKitPackageTests" : [
+      "PhoneDirectoryKitTests",
+      "PhoneDirectoryKit"
+    ],
+    "PhoneDirectoryKitTests" : [
+      "PhoneDirectoryKit"
+    ]
+  },
+  "testDiscoveryCommands" : {
+
+  },
+  "testEntryPointCommands" : {
+    "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKitPackageTests.derived/runner.swift" : {
+      "inputs" : [
+
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKitPackageTests.derived/runner.swift"
+        }
+      ]
+    }
+  },
+  "traitConfiguration" : {
+    "default" : {
+
+    }
+  },
+  "writeCommands" : {
+    "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKit.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/Sources/PhoneDirectoryKit/DirectoryCatalog.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/Sources/PhoneDirectoryKit/DirectoryMerge.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/Sources/PhoneDirectoryKit/ListInstaller.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/Sources/PhoneDirectoryKit/ListPatch.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/Sources/PhoneDirectoryKit/PhoneList.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/Sources/PhoneDirectoryKit/PhoneListPacker.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKit.build/sources"
+    },
+    "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKitPackageTests.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKitPackageTests.derived/runner.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKitPackageTests.build/sources"
+    },
+    "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKitPackageTests.product/Objects.LinkFileList" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<link-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKit.build/DirectoryCatalog.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKit.build/DirectoryMerge.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKit.build/ListInstaller.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKit.build/ListPatch.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKit.build/PhoneList.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKit.build/PhoneListPacker.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKitPackageTests.build/runner.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKitTests.build/DirectoryMergeTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKitTests.build/ListPatchTests.swift.o"
+        }
+      ],
+      "outputFilePath" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKitPackageTests.product/Objects.LinkFileList"
+    },
+    "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKitTests.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/Tests/PhoneDirectoryKitTests/DirectoryMergeTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/Tests/PhoneDirectoryKitTests/ListPatchTests.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/PhoneDirectoryKitTests.build/sources"
+    },
+    "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt" : {
+      "alwaysOutOfDate" : true,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<swift-get-version>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+        }
+      ],
+      "outputFilePath" : "/Users/gapul/Developer/github.com/gapul/jp-phone-opendata/ios/PhoneDirectoryKit/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+    }
+  }
+}
