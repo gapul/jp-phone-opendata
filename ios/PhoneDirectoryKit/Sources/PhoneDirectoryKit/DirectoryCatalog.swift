@@ -68,8 +68,12 @@ public struct DirectoryCatalog: Codable {
 
     /// Suggested lists, shown so the app is not an empty box on first launch.
     /// They are only offers — nothing is installed until the user picks one.
+    ///
+    /// A fixed tag, not "latest": the apps are released on their own schedule and
+    /// would otherwise claim that name, leaving every subscriber without a
+    /// catalogue until the next data run.
     public static let suggestionsURL = URL(
-        string: "https://github.com/gapul/jp-phone-opendata/releases/latest/download/catalog.json"
+        string: "https://github.com/gapul/jp-phone-opendata/releases/download/lists/catalog.json"
     )!
 
     private static let filename = "catalog.json"

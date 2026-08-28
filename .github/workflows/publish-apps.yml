@@ -1,0 +1,82 @@
+name: publish-apps
+
+# The clients contain no data, so they are released on their own schedule rather
+# than riding along with a monthly 1.7 GB harvest.
+on:
+  push:
+    tags: ["apps-*"]
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  android:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+      - name: Build APK
+        working-directory: android
+        # Debug signing, because the alternative is an unsigned APK that will not
+        # install at all. Anyone distributing this properly re-signs it.
+        run: ./gradlew --no-daemon test assembleDebug
+      - uses: actions/upload-artifact@v4
+        with:
+          name: apk
+          path: android/app/build/outputs/apk/debug/app-debug.apk
+
+  ios:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: brew install --quiet xcodegen
+      - name: Test the list engine
+        working-directory: ios/PhoneDirectoryKit
+        run: swift test
+      - name: Build unsigned IPA
+        working-directory: ios
+        # Unsigned on purpose: this is sideloaded, and the tools that install it
+        # re-sign with the user's own account.
+        run: |
+          xcodegen generate
+          xcodebuild -project JPPhoneDirectory.xcodeproj -scheme JPPhoneDirectory \
+            -configuration Release -destination 'generic/platform=iOS' \
+            -derivedDataPath build CODE_SIGNING_ALLOWED=NO build
+          mkdir -p Payload
+          cp -R build/Build/Products/Release-iphoneos/JPPhoneDirectory.app Payload/
+          zip -qry JPPhoneDirectory-unsigned.ipa Payload
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ipa
+          path: ios/JPPhoneDirectory-unsigned.ipa
+
+  publish:
+    needs: [android, ios]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          path: apps
+      - name: Publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          version=$(grep -m1 MARKETING_VERSION ios/project.yml | tr -d ' "' | cut -d: -f2)
+          tag="$GITHUB_REF_NAME"
+          case "$tag" in apps-*) ;; *) tag="apps-$(date -u +%Y%m%d)" ;; esac
+
+          {
+            echo "The iOS build is unsigned: sideload it with something that re-signs,"
+            echo "such as AltStore or SideStore. The Android build carries debug signing"
+            echo "so it installs with \`adb install\`."
+            echo
+            echo "Neither contains any data. Both fetch the list catalogue on first launch."
+          } > notes.md
+
+          gh release create "$tag" --title "Apps $version" --notes-file notes.md \
+            apps/apk/app-debug.apk apps/ipa/JPPhoneDirectory-unsigned.ipa

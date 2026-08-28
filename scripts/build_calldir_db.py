@@ -38,8 +38,10 @@ import list_format
 MAGIC = b"JPCD"
 VERSION = 1
 
-# Must match DirectoryCatalog.suggestionsURL's directory in the app.
-DOWNLOAD_BASE_URL = "https://github.com/gapul/jp-phone-opendata/releases/latest/download/"
+# Must match DirectoryCatalog.suggestionsURL's directory in the app. A fixed tag
+# rather than "latest": the apps are released separately and would otherwise take
+# that name and leave subscribers with no catalogue.
+DOWNLOAD_BASE_URL = "https://github.com/gapul/jp-phone-opendata/releases/download/lists/"
 
 # CallKit truncates long labels in the call UI anyway, and labels dominate the
 # file size, so cap them. Generous enough to keep real business names intact.

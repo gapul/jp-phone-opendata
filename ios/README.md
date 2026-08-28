@@ -95,8 +95,11 @@ cd ios && xcodegen generate && open JPPhoneDirectory.xcodeproj
 Run on a device, then enable it under Settings › Apps › Phone › Call Blocking &
 Identification. The simulator builds but cannot load the extension.
 
-Lists are published by `.github/workflows/publish-lists.yml`, which the app's
-catalogue URL points at.
+Lists and clients are released separately: `publish-lists.yml` replaces a rolling
+`lists` release monthly, `publish-apps.yml` builds the IPA and APK when an
+`apps-*` tag is pushed. The fixed tag matters — the app's catalogue URL points at
+it, and an app release claiming "latest" would otherwise leave subscribers
+without one.
 
 ## List format
 

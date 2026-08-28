@@ -1,7 +1,12 @@
-name: publish
+name: publish-lists
 
-# Builds the clients and rebuilds the caller-ID lists, then puts all of it in one
-# release — which is what the app's catalogue points at.
+# Rebuilds the caller-ID lists and replaces the contents of the `lists` release,
+# which is what the app's catalogue points at.
+#
+# A fixed tag rather than a dated one, for two reasons: the apps are released
+# separately and would otherwise claim "latest" and leave subscribers without a
+# catalogue, and only one hop of patches is ever published, so keeping older
+# releases would cost 1.7 GB a month for nothing.
 on:
   schedule:
     # Monthly, a few days after Overture's release lands.
@@ -11,54 +16,11 @@ on:
 permissions:
   contents: write
 
+env:
+  TAG: lists
+
 jobs:
-  # Both clients are independent of the data: they ship with no lists in them, so
-  # neither waits on the harvest.
-  android:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-java@v4
-        with:
-          distribution: temurin
-          java-version: "21"
-      - name: Build APK
-        working-directory: android
-        # Debug signing, because the alternative is an unsigned APK that will not
-        # install at all. Anyone distributing this properly re-signs it.
-        run: ./gradlew --no-daemon test assembleDebug
-      - uses: actions/upload-artifact@v4
-        with:
-          name: apk
-          path: android/app/build/outputs/apk/debug/app-debug.apk
-
-  ios:
-    runs-on: macos-latest
-    steps:
-      - uses: actions/checkout@v4
-      - run: brew install --quiet xcodegen
-      - name: Test the list engine
-        working-directory: ios/PhoneDirectoryKit
-        run: swift test
-      - name: Build unsigned IPA
-        working-directory: ios
-        # Unsigned on purpose: this is sideloaded, and the tools that install it
-        # re-sign with the user's own account.
-        run: |
-          xcodegen generate
-          xcodebuild -project JPPhoneDirectory.xcodeproj -scheme JPPhoneDirectory \
-            -configuration Release -destination 'generic/platform=iOS' \
-            -derivedDataPath build CODE_SIGNING_ALLOWED=NO build
-          mkdir -p Payload
-          cp -R build/Build/Products/Release-iphoneos/JPPhoneDirectory.app Payload/
-          zip -qry JPPhoneDirectory-unsigned.ipa Payload
-      - uses: actions/upload-artifact@v4
-        with:
-          name: ipa
-          path: ios/JPPhoneDirectory-unsigned.ipa
-
   publish:
-    needs: [android, ios]
     runs-on: ubuntu-latest
     timeout-minutes: 300
     steps:
@@ -81,17 +43,17 @@ jobs:
       # Patches are the difference against the copy already published, so the
       # previous release has to be on disk before the build runs. Without this
       # step every subscriber would silently fall back to full downloads.
-      - name: Fetch previous release into dist/
+      - name: Fetch the published lists into dist/
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           mkdir -p dist
-          if gh release download --pattern 'places_*.bin' --pattern 'catalog.json' \
+          if gh release download "$TAG" --pattern 'places_*.bin' --pattern 'catalog.json' \
                --dir dist --clobber 2>/dev/null; then
             echo "previous release restored:"
             ls -la dist | head
           else
-            echo "no previous release; this build will publish full lists only"
+            echo "nothing published yet; this build will publish full lists only"
           fi
 
       - name: Checks
@@ -120,22 +82,28 @@ jobs:
       - name: Guard against a collapsed harvest
         run: python3 scripts/check_release.py dist
 
-      - uses: actions/download-artifact@v4
-        with:
-          path: apps
-
       - name: Publish
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           assets=(dist/catalog.json dist/ATTRIBUTION.md dist/places_*.bin)
-          # Patches only exist once there is a previous release to diff against,
-          # so the first run has none and the glob must not be passed through.
+          # Patches only exist once something was published to diff against, so
+          # the first run has none and the glob must not be passed through.
           compgen -G 'dist/*.patch' >/dev/null && assets+=(dist/*.patch)
-          assets+=(apps/apk/app-debug.apk apps/ipa/JPPhoneDirectory-unsigned.ipa)
 
-          tag="lists-$(date -u +%Y%m%d)"
-          gh release create "$tag" \
-            --title "Lists $(date -u +%Y-%m-%d)" \
-            --notes-file dist/RELEASE_NOTES.md \
-            "${assets[@]}"
+          # Replace in place. The release is not recreated, so the download URLs
+          # keep working for anyone fetching mid-run.
+          gh release view "$TAG" >/dev/null 2>&1 || \
+            gh release create "$TAG" --title "Lists" --notes "Rolling data release."
+          gh release upload "$TAG" "${assets[@]}" --clobber
+          gh release edit "$TAG" --notes-file dist/RELEASE_NOTES.md \
+            --title "Lists $(date -u +%Y-%m-%d)"
+
+          # Assets dropped from the catalogue would otherwise linger for ever.
+          published=$(printf '%s\n' "${assets[@]}" | xargs -n1 basename | sort)
+          gh release view "$TAG" --json assets -q '.assets[].name' | sort \
+            | comm -23 - <(printf '%s\n' "$published") \
+            | while read -r stale; do
+                echo "removing stale asset: $stale"
+                gh release delete-asset "$TAG" "$stale" --yes
+              done
