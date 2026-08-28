@@ -1,0 +1,83 @@
+name: publish-lists
+
+# Rebuilds the caller-ID lists and publishes them as a release, which is what the
+# iOS app's catalogue points at.
+on:
+  schedule:
+    # Monthly, a few days after Overture's release lands.
+    - cron: "0 20 22 * *" # 05:00 JST on the 23rd
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq poppler-utils
+          curl -fsSL -o duckdb.zip \
+            https://github.com/duckdb/duckdb/releases/latest/download/duckdb_cli-linux-amd64.zip
+          unzip -q duckdb.zip -d "$HOME/.local/bin"
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+      # Patches are the difference against the copy already published, so the
+      # previous release has to be on disk before the build runs. Without this
+      # step every subscriber would silently fall back to full downloads.
+      - name: Fetch previous release into dist/
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p dist
+          if gh release download --pattern 'places_*.bin' --pattern 'catalog.json' \
+               --dir dist --clobber 2>/dev/null; then
+            echo "previous release restored:"
+            ls -la dist
+          else
+            echo "no previous release; this build will publish full lists only"
+          fi
+
+      - name: Checks
+        run: |
+          python3 scripts/jp_phone.py
+          python3 scripts/build_calldir_db.py --demo
+
+      - name: Harvest sources
+        run: |
+          duckdb -c ".read scripts/extract_jp_places.sql"
+          python3 scripts/fetch_mhlw_care_jp.py data/ios
+          python3 scripts/fetch_kouseikyoku_iryo_jp.py data/ios
+          python3 scripts/fetch_kouseikyoku_pdf_jp.py data/ios
+          python3 scripts/fetch_municipal_facilities_jp.py data/ios
+          python3 scripts/fetch_places_world.py data/world
+          python3 scripts/fetch_alltheplaces.py data/world
+          python3 scripts/fetch_nppes_us.py data/world
+
+      - name: Build lists
+        run: python3 scripts/build_calldir_db.py data/ios data/world data/suppressions dist
+
+      # Several of these sources are scraped from sites that change without
+      # warning. A silent collapse would publish a gutted list over a good one,
+      # so a large drop fails the run instead.
+      - name: Guard against a collapsed harvest
+        run: python3 scripts/check_release.py dist
+
+      - name: Publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag="lists-$(date -u +%Y%m%d)"
+          gh release create "$tag" \
+            --title "Lists $(date -u +%Y-%m-%d)" \
+            --notes-file dist/RELEASE_NOTES.md \
+            dist/catalog.json dist/ATTRIBUTION.md dist/places_*.bin dist/*.patch
