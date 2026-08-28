@@ -1,0 +1,7 @@
+net.gapul.jpphonedirectory.app-pngs-0 /Users/gapul/Developer/github.com/gapul/jp-phone-opendata/android/app/build/generated/res/pngs/release
+net.gapul.jpphonedirectory.app-resValues-1 /Users/gapul/Developer/github.com/gapul/jp-phone-opendata/android/app/build/generated/res/resValues/release
+net.gapul.jpphonedirectory.app-packageReleaseResources-2 /Users/gapul/Developer/github.com/gapul/jp-phone-opendata/android/app/build/intermediates/incremental/release/packageReleaseResources/merged.dir
+net.gapul.jpphonedirectory.app-packageReleaseResources-3 /Users/gapul/Developer/github.com/gapul/jp-phone-opendata/android/app/build/intermediates/incremental/release/packageReleaseResources/stripped.dir
+net.gapul.jpphonedirectory.app-release-4 /Users/gapul/Developer/github.com/gapul/jp-phone-opendata/android/app/build/intermediates/merged_res/release/mergeReleaseResources
+net.gapul.jpphonedirectory.app-main-5 /Users/gapul/Developer/github.com/gapul/jp-phone-opendata/android/app/src/main/res
+net.gapul.jpphonedirectory.app-release-6 /Users/gapul/Developer/github.com/gapul/jp-phone-opendata/android/app/src/release/res

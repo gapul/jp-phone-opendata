@@ -1,0 +1,67 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/gapul/Developer/github.com/gapul/jp-phone-opendata/android/app/src/main/AndroidManifest.xml:2:1-34:12
+INJECTED from /Users/gapul/Developer/github.com/gapul/jp-phone-opendata/android/app/src/main/AndroidManifest.xml:2:1-34:12
+INJECTED from /Users/gapul/Developer/github.com/gapul/jp-phone-opendata/android/app/src/main/AndroidManifest.xml:2:1-34:12
+INJECTED from /Users/gapul/Developer/github.com/gapul/jp-phone-opendata/android/app/src/main/AndroidManifest.xml:2:1-34:12
+	package
+		INJECTED from /Users/gapul/Developer/github.com/gapul/jp-phone-opendata/android/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/gapul/Developer/github.com/gapul/jp-phone-opendata/android/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/gapul/Developer/github.com/gapul/jp-phone-opendata/android/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/gapul/Developer/github.com/gapul/jp-phone-opendata/android/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /Users/gapul/Developer/github.com/gapul/jp-phone-opendata/android/app/src/main/AndroidManifest.xml:4:5-67
+	android:name
+		ADDED from /Users/gapul/Developer/github.com/gapul/jp-phone-opendata/android/app/src/main/AndroidManifest.xml:4:22-64
+application
+ADDED from /Users/gapul/Developer/github.com/gapul/jp-phone-opendata/android/app/src/main/AndroidManifest.xml:6:5-33:19
+INJECTED from /Users/gapul/Developer/github.com/gapul/jp-phone-opendata/android/app/src/main/AndroidManifest.xml:6:5-33:19
+	android:extractNativeLibs
+		INJECTED from /Users/gapul/Developer/github.com/gapul/jp-phone-opendata/android/app/src/main/AndroidManifest.xml
+	android:label
+		ADDED from /Users/gapul/Developer/github.com/gapul/jp-phone-opendata/android/app/src/main/AndroidManifest.xml:8:9-41
+	android:allowBackup
+		ADDED from /Users/gapul/Developer/github.com/gapul/jp-phone-opendata/android/app/src/main/AndroidManifest.xml:7:9-36
+activity#net.gapul.jpphonedirectory.MainActivity
+ADDED from /Users/gapul/Developer/github.com/gapul/jp-phone-opendata/android/app/src/main/AndroidManifest.xml:10:9-17:20
+	android:exported
+		ADDED from /Users/gapul/Developer/github.com/gapul/jp-phone-opendata/android/app/src/main/AndroidManifest.xml:12:13-36
+	android:name
+		ADDED from /Users/gapul/Developer/github.com/gapul/jp-phone-opendata/android/app/src/main/AndroidManifest.xml:11:13-41
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/gapul/Developer/github.com/gapul/jp-phone-opendata/android/app/src/main/AndroidManifest.xml:13:13-16:29
+action#android.intent.action.MAIN
+ADDED from /Users/gapul/Developer/github.com/gapul/jp-phone-opendata/android/app/src/main/AndroidManifest.xml:14:17-69
+	android:name
+		ADDED from /Users/gapul/Developer/github.com/gapul/jp-phone-opendata/android/app/src/main/AndroidManifest.xml:14:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/gapul/Developer/github.com/gapul/jp-phone-opendata/android/app/src/main/AndroidManifest.xml:15:17-77
+	android:name
+		ADDED from /Users/gapul/Developer/github.com/gapul/jp-phone-opendata/android/app/src/main/AndroidManifest.xml:15:27-74
+provider#net.gapul.jpphonedirectory.DirectoryProvider
+ADDED from /Users/gapul/Developer/github.com/gapul/jp-phone-opendata/android/app/src/main/AndroidManifest.xml:24:9-32:20
+	android:readPermission
+		ADDED from /Users/gapul/Developer/github.com/gapul/jp-phone-opendata/android/app/src/main/AndroidManifest.xml:28:13-78
+	android:authorities
+		ADDED from /Users/gapul/Developer/github.com/gapul/jp-phone-opendata/android/app/src/main/AndroidManifest.xml:26:13-71
+	android:exported
+		ADDED from /Users/gapul/Developer/github.com/gapul/jp-phone-opendata/android/app/src/main/AndroidManifest.xml:27:13-36
+	android:name
+		ADDED from /Users/gapul/Developer/github.com/gapul/jp-phone-opendata/android/app/src/main/AndroidManifest.xml:25:13-46
+meta-data#android.content.ContactDirectory
+ADDED from /Users/gapul/Developer/github.com/gapul/jp-phone-opendata/android/app/src/main/AndroidManifest.xml:29:13-31:40
+	android:value
+		ADDED from /Users/gapul/Developer/github.com/gapul/jp-phone-opendata/android/app/src/main/AndroidManifest.xml:31:17-37
+	android:name
+		ADDED from /Users/gapul/Developer/github.com/gapul/jp-phone-opendata/android/app/src/main/AndroidManifest.xml:30:17-64
+uses-sdk
+INJECTED from /Users/gapul/Developer/github.com/gapul/jp-phone-opendata/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/gapul/Developer/github.com/gapul/jp-phone-opendata/android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/gapul/Developer/github.com/gapul/jp-phone-opendata/android/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/gapul/Developer/github.com/gapul/jp-phone-opendata/android/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/gapul/Developer/github.com/gapul/jp-phone-opendata/android/app/src/main/AndroidManifest.xml

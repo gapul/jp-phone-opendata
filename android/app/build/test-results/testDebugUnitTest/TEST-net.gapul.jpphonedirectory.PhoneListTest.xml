@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="net.gapul.jpphonedirectory.PhoneListTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-08-28T09:38:15" hostname="MacBook-Mini" time="0.103">
+  <properties/>
+  <testcase name="normalisation matches the harvesters" classname="net.gapul.jpphonedirectory.PhoneListTest" time="0.055"/>
+  <testcase name="finds every entry and nothing between them" classname="net.gapul.jpphonedirectory.PhoneListTest" time="0.036"/>
+  <testcase name="earlier list wins and a suppression hides the number" classname="net.gapul.jpphonedirectory.PhoneListTest" time="0.004"/>
+  <testcase name="rejects a file that is not a packed list" classname="net.gapul.jpphonedirectory.PhoneListTest" time="0.002"/>
+  <testcase name="reads japanese labels back intact" classname="net.gapul.jpphonedirectory.PhoneListTest" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
