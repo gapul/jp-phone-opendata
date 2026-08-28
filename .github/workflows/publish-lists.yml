@@ -1,7 +1,7 @@
-name: publish-lists
+name: publish
 
-# Rebuilds the caller-ID lists and publishes them as a release, which is what the
-# iOS app's catalogue points at.
+# Builds the clients and rebuilds the caller-ID lists, then puts all of it in one
+# release — which is what the app's catalogue points at.
 on:
   schedule:
     # Monthly, a few days after Overture's release lands.
@@ -12,7 +12,53 @@ permissions:
   contents: write
 
 jobs:
+  # Both clients are independent of the data: they ship with no lists in them, so
+  # neither waits on the harvest.
+  android:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+      - name: Build APK
+        working-directory: android
+        # Debug signing, because the alternative is an unsigned APK that will not
+        # install at all. Anyone distributing this properly re-signs it.
+        run: ./gradlew --no-daemon test assembleDebug
+      - uses: actions/upload-artifact@v4
+        with:
+          name: apk
+          path: android/app/build/outputs/apk/debug/app-debug.apk
+
+  ios:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: brew install --quiet xcodegen
+      - name: Test the list engine
+        working-directory: ios/PhoneDirectoryKit
+        run: swift test
+      - name: Build unsigned IPA
+        working-directory: ios
+        # Unsigned on purpose: this is sideloaded, and the tools that install it
+        # re-sign with the user's own account.
+        run: |
+          xcodegen generate
+          xcodebuild -project JPPhoneDirectory.xcodeproj -scheme JPPhoneDirectory \
+            -configuration Release -destination 'generic/platform=iOS' \
+            -derivedDataPath build CODE_SIGNING_ALLOWED=NO build
+          mkdir -p Payload
+          cp -R build/Build/Products/Release-iphoneos/JPPhoneDirectory.app Payload/
+          zip -qry JPPhoneDirectory-unsigned.ipa Payload
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ipa
+          path: ios/JPPhoneDirectory-unsigned.ipa
+
   publish:
+    needs: [android, ios]
     runs-on: ubuntu-latest
     timeout-minutes: 300
     steps:
@@ -43,7 +89,7 @@ jobs:
           if gh release download --pattern 'places_*.bin' --pattern 'catalog.json' \
                --dir dist --clobber 2>/dev/null; then
             echo "previous release restored:"
-            ls -la dist
+            ls -la dist | head
           else
             echo "no previous release; this build will publish full lists only"
           fi
@@ -51,18 +97,19 @@ jobs:
       - name: Checks
         run: |
           python3 scripts/jp_phone.py
+          python3 scripts/verify_owner.py --demo
           python3 scripts/build_calldir_db.py --demo
 
       - name: Harvest sources
         run: |
           duckdb -c ".read scripts/extract_jp_places.sql"
+          python3 scripts/fetch_places_world.py data/world
+          python3 scripts/fetch_alltheplaces.py data/world
+          python3 scripts/fetch_nppes_us.py data/world
           python3 scripts/fetch_mhlw_care_jp.py data/ios
           python3 scripts/fetch_kouseikyoku_iryo_jp.py data/ios
           python3 scripts/fetch_kouseikyoku_pdf_jp.py data/ios
           python3 scripts/fetch_municipal_facilities_jp.py data/ios
-          python3 scripts/fetch_places_world.py data/world
-          python3 scripts/fetch_alltheplaces.py data/world
-          python3 scripts/fetch_nppes_us.py data/world
 
       - name: Build lists
         run: python3 scripts/build_calldir_db.py data/ios data/world data/suppressions dist
@@ -73,6 +120,10 @@ jobs:
       - name: Guard against a collapsed harvest
         run: python3 scripts/check_release.py dist
 
+      - uses: actions/download-artifact@v4
+        with:
+          path: apps
+
       - name: Publish
         env:
           GH_TOKEN: ${{ github.token }}
@@ -81,4 +132,5 @@ jobs:
           gh release create "$tag" \
             --title "Lists $(date -u +%Y-%m-%d)" \
             --notes-file dist/RELEASE_NOTES.md \
-            dist/catalog.json dist/ATTRIBUTION.md dist/places_*.bin dist/*.patch
+            dist/catalog.json dist/ATTRIBUTION.md dist/places_*.bin dist/*.patch \
+            apps/apk/app-debug.apk apps/ipa/JPPhoneDirectory-unsigned.ipa
