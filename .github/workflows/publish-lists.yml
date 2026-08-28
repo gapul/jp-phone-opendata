@@ -128,9 +128,14 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          assets=(dist/catalog.json dist/ATTRIBUTION.md dist/places_*.bin)
+          # Patches only exist once there is a previous release to diff against,
+          # so the first run has none and the glob must not be passed through.
+          compgen -G 'dist/*.patch' >/dev/null && assets+=(dist/*.patch)
+          assets+=(apps/apk/app-debug.apk apps/ipa/JPPhoneDirectory-unsigned.ipa)
+
           tag="lists-$(date -u +%Y%m%d)"
           gh release create "$tag" \
             --title "Lists $(date -u +%Y-%m-%d)" \
             --notes-file dist/RELEASE_NOTES.md \
-            dist/catalog.json dist/ATTRIBUTION.md dist/places_*.bin dist/*.patch \
-            apps/apk/app-debug.apk apps/ipa/JPPhoneDirectory-unsigned.ipa
+            "${assets[@]}"
