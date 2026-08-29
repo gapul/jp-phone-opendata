@@ -29,7 +29,10 @@ IGNORE_BELOW = 100
 
 
 def main(dist: Path) -> None:
-    catalog = json.loads((dist / "catalog.json").read_text(encoding="utf-8"))
+    catalog_path = dist / "catalog.json"
+    if not catalog_path.exists():
+        sys.exit(f"nothing to check: {catalog_path} does not exist")
+    catalog = json.loads(catalog_path.read_text(encoding="utf-8"))
     previous_path = dist / "catalog.previous.json"
     previous = {}
     if previous_path.exists():

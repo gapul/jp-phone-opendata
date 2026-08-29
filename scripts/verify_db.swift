@@ -14,14 +14,27 @@ import Foundation
 
 @main
 enum VerifyDB {
-    static func main() throws {
+    static func main() {
         let arguments = CommandLine.arguments
         guard arguments.count == 2 else {
             FileHandle.standardError.write(Data("usage: verify_db <list.bin>\n".utf8))
             exit(2)
         }
 
-        let list = try PhoneList(url: URL(fileURLWithPath: arguments[1]))
+        let path = arguments[1]
+        guard FileManager.default.isReadableFile(atPath: path) else {
+            FileHandle.standardError.write(Data("cannot read \(path)\n".utf8))
+            exit(1)
+        }
+        let list: PhoneList
+        do {
+            list = try PhoneList(url: URL(fileURLWithPath: path))
+        } catch {
+            // A truncated download looks exactly like this, and a stack trace
+            // would not say so.
+            FileHandle.standardError.write(Data("not a usable list: \(error)\n".utf8))
+            exit(1)
+        }
         print("count: \(list.count)")
 
         var previous = Int64.min

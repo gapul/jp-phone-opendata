@@ -68,12 +68,23 @@ def main(dist: Path, raw: str) -> None:
     number = parse(raw)
     if number is None:
         sys.exit(f"{raw!r} is not a usable phone number")
+
+    catalog_path = dist / "catalog.json"
+    if not catalog_path.exists():
+        sys.exit(
+            f"no lists in {dist}/ — build them, or fetch what is published:\n"
+            f"  gh release download lists --dir {dist}"
+        )
     print(f"+{number}")
 
-    catalog = json.loads((dist / "catalog.json").read_text(encoding="utf-8"))
+    catalog = json.loads(catalog_path.read_text(encoding="utf-8"))
     hits = 0
     for entry in catalog:
-        rows = dict(list_format.read_list(dist / entry["filename"]))
+        listing = dist / entry["filename"]
+        if not listing.exists():
+            # A partial download is normal: the catalogue names every country.
+            continue
+        rows = dict(list_format.read_list(listing))
         label = rows.get(number)
         if label is None:
             continue

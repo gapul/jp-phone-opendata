@@ -89,8 +89,12 @@ def check(page: str, url: str, number: int, token: str, known: set[str]) -> tupl
 
 def fetch(url: str) -> str:
     request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-    with urllib.request.urlopen(request, timeout=30) as response:
-        return response.read(2_000_000).decode("utf-8", errors="replace")
+    try:
+        with urllib.request.urlopen(request, timeout=30) as response:
+            return response.read(2_000_000).decode("utf-8", errors="replace")
+    except Exception as error:  # noqa: BLE001 - the URL comes from a stranger
+        # An unreachable page is an ordinary outcome here, not a crash.
+        sys.exit(f"not verified: could not fetch {url} ({error})")
 
 
 def demo() -> None:
