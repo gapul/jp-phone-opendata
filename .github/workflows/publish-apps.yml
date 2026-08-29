@@ -67,6 +67,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           version=$(grep -m1 MARKETING_VERSION ios/project.yml | tr -d ' "' | cut -d: -f2)
+          build=$(grep -m1 CURRENT_PROJECT_VERSION ios/project.yml | tr -d ' "' | cut -d: -f2)
           tag="$GITHUB_REF_NAME"
           case "$tag" in apps-*) ;; *) tag="apps-$(date -u +%Y%m%d)" ;; esac
 
@@ -78,5 +79,13 @@ jobs:
             echo "Neither contains any data. Both fetch the list catalogue on first launch."
           } > notes.md
 
+          # Read by altstore-source's nightly refresh: the tag is a date, so the
+          # version has to be stated rather than inferred from it.
+          {
+            echo "VERSION=$version"
+            echo "BUILD=$build"
+            echo "MINOS=17.0"
+          } > meta.env
+
           gh release create "$tag" --title "Apps $version" --notes-file notes.md \
-            apps/apk/app-debug.apk apps/ipa/JPPhoneDirectory-unsigned.ipa
+            apps/apk/app-debug.apk apps/ipa/JPPhoneDirectory-unsigned.ipa meta.env
