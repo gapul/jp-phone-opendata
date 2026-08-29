@@ -89,3 +89,19 @@ jobs:
 
           gh release create "$tag" --title "Apps $version" --notes-file notes.md \
             apps/apk/app-debug.apk apps/ipa/JPPhoneDirectory-unsigned.ipa meta.env
+
+      # altstore-source refreshes itself nightly anyway; this only shortens the
+      # wait. It needs a token because the built-in one cannot reach another
+      # repository, so without the secret the step says so and moves on rather
+      # than failing the release.
+      - name: Ask altstore-source to refresh now
+        env:
+          GH_TOKEN: ${{ secrets.ALTSTORE_DISPATCH_TOKEN }}
+        run: |
+          if [ -z "$GH_TOKEN" ]; then
+            echo "ALTSTORE_DISPATCH_TOKEN not set — altstore-source will catch up on its nightly run"
+            exit 0
+          fi
+          gh api repos/gapul/altstore-source/dispatches \
+            -f event_type=refresh-source \
+            && echo "asked altstore-source to refresh"
