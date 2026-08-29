@@ -132,6 +132,11 @@ swiftc -O -parse-as-library \
     ios/PhoneDirectoryKit/Sources/PhoneDirectoryKit/PhoneList.swift \
     scripts/verify_db.swift -o /tmp/verify_db
 for f in dist/places_*.bin; do /tmp/verify_db "$f"; done
+
+# Reads the published release back through the app's own code
+swiftc -O -parse-as-library \
+    ios/PhoneDirectoryKit/Sources/PhoneDirectoryKit/*.swift \
+    scripts/integration_check.swift -o /tmp/integration_check && /tmp/integration_check
 ```
 
 Known gaps, roughly in order of how much they would help:

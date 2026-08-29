@@ -19,6 +19,10 @@ ios/JPPhoneDirectory.xcodeproj/
 
 # iOS build artifacts
 ios/build/
+ios/PhoneDirectoryKit/.build/
+ios/PhoneDirectoryKit/.swiftpm/
+ios/Payload/
+ios/*.ipa
 ios/dist-ipa/
 ios/*.xcodeproj/
 

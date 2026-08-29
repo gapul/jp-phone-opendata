@@ -107,3 +107,17 @@ jobs:
                 echo "removing stale asset: $stale"
                 gh release delete-asset "$TAG" "$stale" --yes
               done
+
+  # Reads what was just published back, using the app's own code, because the
+  # unit tests only ever see synthetic lists and the packer only ever sees files
+  # it wrote itself. This is the first thing that touches both at once.
+  smoke:
+    needs: publish
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          swiftc -O -parse-as-library \
+            ios/PhoneDirectoryKit/Sources/PhoneDirectoryKit/*.swift \
+            scripts/integration_check.swift -o integration_check
+          ./integration_check
