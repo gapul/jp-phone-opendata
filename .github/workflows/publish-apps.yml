@@ -96,10 +96,10 @@ jobs:
       # than failing the release.
       - name: Ask altstore-source to refresh now
         env:
-          GH_TOKEN: ${{ secrets.ALTSTORE_DISPATCH_TOKEN }}
+          GH_TOKEN: ${{ secrets.SOURCE_DISPATCH_TOKEN }}
         run: |
           if [ -z "$GH_TOKEN" ]; then
-            echo "ALTSTORE_DISPATCH_TOKEN not set — altstore-source will catch up on its nightly run"
+            echo "SOURCE_DISPATCH_TOKEN not set — altstore-source will catch up on its nightly run"
             exit 0
           fi
           gh api repos/gapul/altstore-source/dispatches \
